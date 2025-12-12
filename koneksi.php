@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "salepisang";
+$db   = "psas_db";
 
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 
