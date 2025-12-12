@@ -1,0 +1,212 @@
+Oke, saya buatkan **rancangan lengkap & menarik** untuk aplikasi **Toko Sale Pisang** ya 👍
+Jadi nanti ada gambaran jelas: **konsep, halaman, alur, tampilan, dan database**.
+
+---
+
+# 🛒 Rancangan Aplikasi Toko Sale Pisang
+
+## 1. 🎨 Identitas Desain
+
+* **Warna Utama**:
+
+  * 🍌 Kuning Pisang (#FFD54F) → Ceria, khas produk.
+  * 🌿 Hijau Segar (#388E3C) → Natural, sehat.
+  * ⚪ Putih (#FFFFFF) → Bersih, minimalis.
+  * ⚫ Abu Gelap (#333333) → Kontras teks.
+
+* **Tipografi**:
+
+  * Judul → *Poppins Bold*.
+  * Isi → *Roboto Regular*.
+
+* **Style UI/UX**:
+
+  * Minimalis, modern, user-friendly.
+  * Menggunakan card, shadow lembut, sudut rounded.
+  * Navigasi jelas & responsif (mobile friendly).
+
+---
+
+## 2. 📂 Struktur Folder
+
+```
+salepisang/
+│   index (beranda, daftar produk)
+│   order (form pemesanan)
+│   login (halaman admin login)
+│   admin (dashboard admin)
+│   logout (keluar admin)
+│
+├── assets/
+│   └── img/ (gambar produk)
+│
+├── config/
+│   koneksi database
+│
+└── templates/
+    header (navbar, css bootstrap)
+    footer (footer + script js)
+```
+
+---
+
+## 3. 🖥️ Halaman untuk User
+
+### a. **Landing Page / Beranda (index)**
+
+* **Bagian 1: Hero Section**
+
+  * Background: gambar sale pisang.
+  * Headline besar: *“Nikmati Sale Pisang Tradisional, Gurih & Manis Alami”*.
+  * Subheadline: *“Dipilih dari pisang terbaik: Kepok, Raja, Ambon, Mas, Tanduk, Susu”*.
+  * Tombol besar: **Belanja Sekarang** (scroll ke produk).
+
+* **Bagian 2: Daftar Produk**
+
+  * Grid card (3 kolom):
+
+    * Gambar produk.
+    * Nama pisang.
+    * Harga.
+    * Tombol “Pesan”.
+  * Efek hover: gambar zoom-in halus.
+
+* **Bagian 3: Keunggulan Produk**
+
+  * 3 ikon + teks singkat:
+
+    * ✅ 100% Alami
+    * 🚚 Gratis Ongkir Kota
+    * ⭐ Rasa Terjamin
+
+* **Bagian 4: Testimoni Singkat**
+
+  * Slider kecil: komentar pelanggan.
+
+* **Bagian 5: Footer**
+
+  * Kontak toko (WhatsApp, email).
+  * Alamat toko.
+  * Sosial media.
+
+---
+
+### b. **Halaman Pemesanan (order)**
+
+* Form pemesanan tampil dalam card putih modern:
+
+  * **Input field**: Nama Lengkap, Jumlah, Alamat.
+  * **Dropdown**: Pilih jenis pisang (Kepok, Raja, Ambon, Mas, Tanduk, Susu).
+  * Tombol: **Kirim Pesanan** (hijau besar).
+* Setelah submit → muncul pop-up konfirmasi: *“Pesanan Anda berhasil dikirim”*.
+
+---
+
+## 4. 🔑 Halaman untuk Admin
+
+### a. **Login Admin (login)**
+
+* Tampilan sederhana, card kecil di tengah layar.
+* Background: ilustrasi pisang samar.
+* Field: Username + Password.
+* Tombol: Login (biru/kuning).
+* Password terenkripsi **md5** di database.
+
+### b. **Dashboard Admin (admin)**
+
+* Layout **2 kolom**:
+
+  * **Sidebar** (hijau tua) dengan menu:
+
+    * 📋 Daftar Pesanan
+    * 🚪 Logout
+  * **Konten Utama**:
+
+    * Tabel pesanan modern:
+      \| No | Nama | Jenis Pisang | Jumlah | Alamat | Status | Aksi |
+    * Status default: *Pending*.
+    * Tombol aksi:
+
+      * ✔ Terima (hijau)
+      * ❌ Tolak (merah)
+      * 🗑 Hapus (abu).
+
+* **Tambahan visual modern**:
+
+  * Mini chart jumlah pesanan (per hari / per produk).
+
+---
+
+## 5. 🗄️ Rancangan Database
+
+**Nama DB**: `salepisang`
+
+### Tabel `users` (admin)
+
+\| id\_user | username | password (md5) |
+
+### Tabel `pesanan`
+
+\| id\_pesanan | nama | jenis\_pisang | jumlah | alamat | tanggal\_pesan | status |
+
+* `status`: pending / diterima / ditolak.
+
+---
+
+## 6. 📱 Alur Pengguna (User Flow)
+
+1. User buka **beranda** → lihat produk.
+2. Klik **Pesan Sekarang** → masuk ke form order.
+3. Isi data → submit → tersimpan ke database.
+4. Admin login → lihat pesanan → setujui/tolak.
+5. Admin logout.
+
+---
+
+## 7. ✨ Gambaran Visual (Mockup Konsep)
+
+**Landing Page (modern e-commerce style)**
+
+```
+[Navbar: Logo 🍌 Toko Sale Pisang | Beranda | Pemesanan | Admin]
+
+--------------------------------------------------------------
+| [Hero Banner] "Nikmati Sale Pisang Tradisional"  [Belanja] |
+--------------------------------------------------------------
+
+[Produk Card]  [Produk Card]  [Produk Card]
+[Produk Card]  [Produk Card]  [Produk Card]
+
+--------------------------------------------------------------
+| ✅ 100% Alami | 🚚 Gratis Ongkir | ⭐ Rasa Terjamin          |
+--------------------------------------------------------------
+
+[Testimoni Slider]
+
+[Footer: Kontak | Alamat | Sosial Media]
+```
+
+**Dashboard Admin (modern table + chart)**
+
+```
++---------------------+------------------------------------+
+| Sidebar             | Dashboard                          |
+| 📋 Pesanan          |                                    |
+| 🚪 Logout           | Tabel Pesanan:                     |
+|                     | Nama | Jenis | Jumlah | Status |   |
+|                     | Budi | Raja  | 3      | Pending |✔❌|
+|                     | Sari | Kepok | 2      | Diterima |  |
+|                     |------------------------------------|
+|                     | [Mini Chart Pesanan per Hari]      |
++---------------------+------------------------------------+
+```
+
+---
+
+👉 Dengan rancangan ini, aplikasi terasa seperti **mini e-commerce**:
+
+* User mudah memesan.
+* Admin mudah mengelola.
+* Tampilan modern, clean, dan profesional.
+
+Mau saya buatkan juga **sketsa wireframe (gambar mockup visual)** biar desainnya kelihatan lebih hidup?

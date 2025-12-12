@@ -1,0 +1,1 @@
+ALTER TABLE `pesanan` ADD `no_wa` VARCHAR(20) NULL DEFAULT NULL AFTER `nama`;
