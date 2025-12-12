@@ -3,7 +3,7 @@
 <!-- Hero Section -->
 <div class="hero-section text-center">
   <div class="container">
-    <h1 class="display-4">Kelezatan Otentik Sale Pisang</h1>
+    <h1 class="display-4">Toko salee</h1>
     <p class="lead">Dibuat dari pisang pilihan dengan resep tradisional yang terjaga.</p>
     <a href="#produk" class="btn btn-primary btn-lg mt-3">Lihat Produk</a>
   </div>
